@@ -1,0 +1,13 @@
+services:
+  task:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tb_task_674_image
+    container_name: tb_task_674_container
+    volumes:
+      - ./:/workspace
+    command: [ "python", "/workspace/solution/solution.py" ]
+
+# FORCE a valid project name
+name: task_674_project

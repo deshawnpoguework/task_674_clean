@@ -1,0 +1,9 @@
+# Core runtime dependencies
+torch==2.1.0
+
+# Test-time dependencies
+jsonschema==4.19.0
+pytest==7.4.2
+
+# Snorkel TB compatibility utilities
+numpy==1.26.2

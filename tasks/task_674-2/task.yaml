@@ -1,0 +1,52 @@
+task_id: task_674
+name: "Prediction + Confidence JSON Task"
+version: "1.0.0"
+
+instruction: |
+  The solution will be executed using the command:
+
+      python solution/solution.py
+
+  The solution MUST:
+    1. Read the input file located at:
+         input/input.txt
+    2. Analyze the content of that file.
+    3. Produce a JSON object with the following structure:
+
+         {
+           "prediction": "<string>",
+           "confidence": <float between 0.0 and 1.0>
+         }
+
+  The "prediction" value MUST meaningfully incorporate the FIRST WORD of
+  the input file. The program must print this JSON object to standard
+  output (stdout) as a single line of valid JSON.
+
+difficulty: unknown
+
+description: |
+  This task evaluates whether the agent can:
+    - Read a text file from a specified path (input/input.txt),
+    - Use the content of that file to generate a meaningful prediction,
+    - Output a JSON object that conforms to the schema in schema.json,
+    - Print the JSON result to stdout.
+
+  The tests will:
+    - Run `python solution/solution.py`,
+    - Validate the JSON against schema.json,
+    - Confirm that the prediction incorporates the first word of the input,
+    - Confirm that changing the input file changes the prediction.
+
+input_spec: input
+output_schema: schema.json
+
+docker:
+  image: task674-image
+  build_context: .
+  dockerfile: Dockerfile
+
+evaluation:
+  test_command: ./run-tests.sh
+
+
+

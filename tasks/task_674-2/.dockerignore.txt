@@ -1,0 +1,6 @@
+tests/
+**/tests/
+solution/
+input/
+__pycache__/
+*.md

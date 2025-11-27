@@ -1,0 +1,27 @@
+# Ignore virtual envs
+.venv/
+site-packages/
+
+# Keep important folders
+!input/
+!tests/
+!runs/
+!.ruff_cache/
+
+# Ignore python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Docker build cache
+*.log
+
+# DO NOT ignore these:
+!task.yaml
+!Dockerfile
+!docker-compose.yaml
+!requirements.txt
+!run-tests.sh
+!schema.json
+!solution.sh
+!test_basic.py
